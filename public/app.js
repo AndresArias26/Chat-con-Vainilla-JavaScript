@@ -52,7 +52,7 @@ const contenidoChat = (user) => {
         inputChat.value = ''
   })
 
-  firebase.firestore().collection('chat')
+  firebase.firestore().collection('chat').orderBy('fecha')
     .onSnapshot(query =>{
         contenidoProtegido.innerHTML = ''
         query.forEach(doc => {
@@ -60,17 +60,18 @@ const contenidoChat = (user) => {
             if(doc.data().uid === user.uid){
                  contenidoProtegido.innerHTML += /*html*/`
                         <div class="d-flex justify-content-end">
-                            <span class="badge rounded-pill bg-primary">${doc.data().texto}</span>
+                            <span class="badge rounded-pill bg-primary">${doc.data().text}</span>
                         </div>
                     `
             }else{
                 contenidoProtegido.innerHTML += /*html*/`
                     <div class="d-flex justify-content-start">
-                        <span class="badge rounded-pill bg-secondary">${doc.data().texto}</span>
+                        <span class="badge rounded-pill bg-secondary">${doc.data().text}</span>
                     </div>
         
                 `
             }
+            contenidoProtegido.scrollTop = contenidoProtegido.scrollHeight
         })
     })
 }
