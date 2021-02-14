@@ -2,13 +2,14 @@ body{
     font-family: 'Poppins', sans-serif;
 }
 .portada{
+    
     background-color: #65d6ce;
     padding: 3px 10px;
     border-left: solid #0699ee 20px;
     /*box-shadow: 0 8px 10px rgba(66,66,66, .5)*/
     margin: auto;
     height: 60px;
-   
+    
     
 }
 .textoportada{
@@ -17,6 +18,7 @@ body{
     display: inline-block;
     margin-left: 38%;
 }
+
 
 
 .logo{
@@ -36,10 +38,11 @@ body{
     border-radius: 10px;
 }
 .container{
-    padding-top: 20px;
+    padding-top: 10px;
     margin-top: 10px;
     background-color:#ece8e8; ;
     border-radius: 10px;
+    
 }
 body{
     background: #7F7FD5;  /* fallback for old browsers */
@@ -50,6 +53,7 @@ body{
 
 .d-flex{
     margin: 5px;
+    font-size: large
 }
 
 
